@@ -2,6 +2,6 @@
 # See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners for more information.
 
 # Everything else in the repository needs to be reviewed by the Architects team
-* @Visma-Idella/Architects
+* @idellabv/Architects
 
-/.github/ @Visma-Idella/VIPS-DevOps
+/.github/ @idellabv/VIPS-DevOps
