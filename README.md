@@ -1,7 +1,7 @@
 # vips-contracts
-Visma Idella BV public resources, OpenAPI and other SCHEMA specifications
+Idella BV public resources, OpenAPI and other SCHEMA specifications
 
-👤 [Visma Idella][info@visma-idella.nl]
+👤 [Idella](mailto:info@idella.com)
 
 This repository contains the data contracts for the VIPS product lines. It serves as the source of truth for the public-facing APIs and events, structured by product line.
 
