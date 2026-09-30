@@ -1,0 +1,38 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/dossier/1.0.0/dossier.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "actual_at": {
+      "deprecated": true,
+      "description": "The date and time when this Dossier data is or was actual. A dossier is created based upon processing the Mutations that affect the dossier and its properties. Deprecated, use `actual_date` instead.",
+      "format": "date-time",
+      "readOnly": true,
+      "type": "string"
+    },
+    "actual_date": {
+      "description": "The date when this Dossier data is or was actual. A dossier is created based upon processing the Mutations that affect the dossier and its properties.",
+      "format": "date",
+      "readOnly": true,
+      "type": "string"
+    },
+    "dossier_id": {
+      "description": "The unique Identifier for this Dossier in the Pension Administration.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "last_mutation_sequence_number": {
+      "description": "The last mutation_sequence_number that was provided for this Dossier. Note that any time a new Mutation sequence number is requested for a mutation, this number increases, regardless of whether this mutation is actually added to the dossier or not.",
+      "format": "int32",
+      "readOnly": true,
+      "type": "integer"
+    },
+    "main_insured_person": {
+      "$ref": "../../main-insured-person/1.0.0/main-insured-person.schema.json"
+    },
+    "ordinal_rank": {
+      "description": "The ordinal rank of the situation on the actual_at.",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,55 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/main-insured-person/1.0.0/main-insured-person.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The Person who is Main Insured in this Dossier.",
+  "properties": {
+    "birth_date": {
+      "description": "The birthdate of the Person.",
+      "format": "date",
+      "type": "string"
+    },
+    "person_id": {
+      "description": "The person_id of the Person that is Main Insured in this Dossier.",
+      "format": "uuid",
+      "readOnly": true,
+      "type": "string"
+    },
+    "pii_collection": {
+      "description": "The Pii collection that contains the Main Insured Person. If this property is not present in the data set, 'default' can be assumed.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "sex": {
+      "description": "The sex of the Person.",
+      "enum": [
+        "MALE",
+        "FEMALE",
+        "UNKNOWN"
+      ],
+      "type": "string"
+    },
+    "state": {
+      "description": "The state of the participant or main insured person. In it, the states of the policies belonging to the participant are aggregated.",
+      "enum": [
+        "ACTIVE",
+        "ASPIRING",
+        "DISABLED",
+        "ASPIRING_DISABLED",
+        "LEAVE_OF_ABSENCE",
+        "NON_CONTRIBUTING",
+        "RETIRED",
+        "BOUGHT_OFF",
+        "DECEASED",
+        "CLOSED",
+        "RETIRED_ACCRUING",
+        "RETIRED_NON_ACCRUING",
+        "PARTIALLY_DISABLED",
+        "PARTIALLY_RETIRED",
+        "RETIRED_DISABLED"
+      ],
+      "type": "string"
+    }
+  },
+  "readOnly": true,
+  "type": "object"
+}

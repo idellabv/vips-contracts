@@ -1,0 +1,14 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-state/1.0.0/coverage-state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "State of a coverage",
+  "enum": [
+    "ACCESSIBLE",
+    "ACCRUING",
+    "NON_CONTRIBUTING",
+    "COMMENCED",
+    "COMMENCED_LATENT",
+    "NO_RIGHT"
+  ],
+  "type": "string"
+}

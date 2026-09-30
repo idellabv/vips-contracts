@@ -1,0 +1,11 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-period-state/1.0.0/coverage-period-state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The state of a Coverage Period.",
+  "enum": [
+    "ACCRUING",
+    "NON_CONTRIBUTING",
+    "CLOSED"
+  ],
+  "type": "string"
+}

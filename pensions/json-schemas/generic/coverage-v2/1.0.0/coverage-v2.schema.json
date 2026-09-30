@@ -1,0 +1,622 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-v2/1.0.0/coverage-v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A Coverage within a Policy.",
+  "properties": {
+    "accrual_end_age": {
+      "description": "The age of the Participant when accrual of this Coverage ends.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "accrual_ends_at": {
+      "description": "The date at which accrual of this Coverage ends.",
+      "format": "date",
+      "type": "string"
+    },
+    "accrual_start_age": {
+      "description": "The age of the participant when accrual of this Coverage starts.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "accrual_started_at": {
+      "description": "The date at which accrual of this Coverage starts.",
+      "format": "date",
+      "type": "string"
+    },
+    "accrued_amount": {
+      "description": "The total amount that is accrued for this Coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "accrued_benefit": {
+      "description": "Accrued benefit amount",
+      "format": "double",
+      "type": "number"
+    },
+    "accrued_risk_amount": {
+      "description": "The built up risk amount for administering a coverage with a Risk calculation base.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "accrued_years": {
+      "description": "The number of years that this Coverage has been accruing.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "accrued_years_before_migration": {
+      "description": "The number of years that this Coverage has been accruing before migration.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "active_coverage_id": {
+      "description": "",
+      "type": "string"
+    },
+    "actuarial_analysis_regulation_id": {
+      "description": "",
+      "type": "string"
+    },
+    "age_difference_factor": {
+      "description": "The factor that the disbursement will be cut due to the age difference between the participant and beneficiary.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "attainable_years": {
+      "description": "The total number of years that the Coverage will be building up, up to the `accrual_end_age`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "beneficiary": {
+      "description": "The Beneficiary of this Coverage.",
+      "properties": {
+        "beneficiary_person_id": {
+          "description": "The Id of the Person that is the beneficiary of this Coverage.",
+          "format": "uuid",
+          "type": "string"
+        },
+        "beneficiary_type": {
+          "$ref": "../../beneficiary-type/1.0.0/beneficiary-type.schema.json"
+        }
+      },
+      "required": [
+        "beneficiary_type"
+      ],
+      "type": "object"
+    },
+    "benefit_plans": {
+      "description": "Benefit plans for the coverage",
+      "items": {
+        "$ref": "../../benefit-plan/1.0.0/benefit-plan.schema.json"
+      },
+      "type": "array"
+    },
+    "calculation_metadata": {
+      "$ref": "../../calculation-metadata/1.0.0/calculation-metadata.schema.json"
+    },
+    "capital_destination": {
+      "$ref": "../../capital-destination/1.0.0/capital-destination.schema.json"
+    },
+    "conditional_indexation_code": {
+      "description": "",
+      "type": "string"
+    },
+    "conditional_method": {
+      "description": "",
+      "enum": [
+        "NONE",
+        "PARTNERRIGHTS_NON_CONTRIBUTING_INSURED",
+        "NO_RIGHT_RELATIONSHIP_STARTDATE_WITHIN_6_MONTHS"
+      ],
+      "type": "string"
+    },
+    "converted_amount": {
+      "description": "The amount that has been deducted from the `accrued_amount` due to conversion (e.g., after divorce).",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "coverage_id": {
+      "description": "The unique internal Id of the Coverage within the Pension Administration.",
+      "examples": [
+        "507f1f77bcf86cd799439011"
+      ],
+      "readOnly": true,
+      "type": "string"
+    },
+    "coverage_periods": {
+      "description": "Coverage Periods inside this Coverage.",
+      "items": {
+        "$ref": "../../coverage-period/1.0.0/coverage-period.schema.json"
+      },
+      "type": "array"
+    },
+    "coverage_type": {
+      "$ref": "../../coverage-type-v2/1.0.0/coverage-type-v2.schema.json"
+    },
+    "cumulative_disbursement": {
+      "description": "The cumulative amount of what has been disbursed",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "current_interest": {
+      "description": "",
+      "type": "number"
+    },
+    "deduction_amount": {
+      "description": "The amount that is deducted from the `accrued_amount`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "deduction_end_date": {
+      "description": "The end date amount that is deducted from the `accrued_amount`.",
+      "format": "date",
+      "type": "string"
+    },
+    "disbursement_discount_amount": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "disbursement_end_date": {
+      "description": "",
+      "format": "date",
+      "type": "string"
+    },
+    "divergent_annual_salary": {
+      "description": "The divergent annual salary used for calculating this coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "divergent_salary_amount": {
+      "description": "The divergent salary used for calculating this coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "dossier_id": {
+      "description": "The Dossier Id in which the Policy to which this coverage belongs resides.",
+      "type": "string"
+    },
+    "employer_annual_premium": {
+      "description": "The annual premium paid by the Employer.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_cumulative_premium": {
+      "description": "The total amount of premium paid by the Employer.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_minimum_required_equity_annual_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_minimum_required_equity_cumulative_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_premium_factor": {
+      "description": "The factor with regards to the `premium_base` that is paid by the Employer.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_resistance_reserve_annual_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_resistance_reserve_cumulative_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_waiver_annual_premium": {
+      "description": "The waivered annual premium that should have been paid by the Employer.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_waiver_cumulative_premium": {
+      "description": "The total waivered amount of premium that should have been paid by the Employer.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "employer_waiver_premium_factor": {
+      "description": "The waivered premium employer factor.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "exempted_cumulative_premium": {
+      "description": "The amount of premium that the participant would have paid if she wasn't incapacitated.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "expiration_age": {
+      "description": "The age of the beneficiary at the Coverage's `disbursement_stops_at`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "expiration_age_beneficiary": {
+      "description": "The age of the beneficiary at which the disbursement of the Coverage is expected to expire.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "expiration_date": {
+      "description": "The date at which the `state` of the Coverage is expected to change to `NO_RIGHT`.",
+      "format": "date",
+      "type": "string"
+    },
+    "expiration_date_beneficiary": {
+      "description": "The date at which the disbursement of the Coverage is expected to stop, related to the beneficiary.",
+      "format": "date",
+      "type": "string"
+    },
+    "extra_amount": {
+      "description": "The amount that is added to the `accrued_amount`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "extra_salary": {
+      "description": "Additional salary, not included in the `pension_salary`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "financial_product": {
+      "description": "Financial product",
+      "type": "string"
+    },
+    "ignore_maximum_salary_increase_factor": {
+      "description": "Ignore the maximum salary increase factor.",
+      "type": "boolean"
+    },
+    "insured_amount": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "is_annual_payment": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_compliant_to_condition": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_divergent_salary": {
+      "description": "Indicates whether this Coverage uses a pension salary that differs from the Policy's `pension_salary`.",
+      "type": "boolean"
+    },
+    "is_double_payment": {
+      "description": "Indicates whether the payment is doubled.",
+      "type": "boolean"
+    },
+    "is_participant_choice_received": {
+      "description": "Indicates whether the participant's choice concerning this coverage is received.",
+      "type": "boolean"
+    },
+    "is_participating": {
+      "description": "Defines if the coverage applies to this Policy.",
+      "type": "boolean"
+    },
+    "joined_life_beneficiary_id": {
+      "description": "",
+      "format": "uuid",
+      "type": "string"
+    },
+    "liability_capital": {
+      "description": "Amount of the coverage that is considered as liability capital.",
+      "format": "double",
+      "type": "number"
+    },
+    "migration_accrued_amount": {
+      "description": "the migration accrued amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "missed_indexation_amount": {
+      "description": "The amount that is missed of the indexation of the accrued amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "next_buy_in_date": {
+      "description": "",
+      "format": "date",
+      "type": "string"
+    },
+    "one_off_cumulative_premium": {
+      "description": "The cumulative of one-off premiums that have been deposited in this Coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "one_off_extra_savings_range": {
+      "description": "The available range for one-off additional savings.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "one_off_extra_savings_range_premium": {
+      "description": "The premium that should be deposited to fully utilize `one_off_extra_savings_range`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "one_off_pension_salary": {
+      "description": "The salary that is used to calculate `one_off_extra_savings_range`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "one_off_premium_factor": {
+      "description": "The factor used to calculate `one_off_extra_savings_range_premium`.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "one_off_used_pension_salary": {
+      "description": "The salary that was used for the one-off extra savings premium deposit.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "paid_amount": {
+      "description": "The cumulative amount that has been disbursed for this Coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_annual_premium": {
+      "description": "The annual premium paid by the Participant.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_capital_age": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_cumulative_premium": {
+      "description": "The total amount of premium paid by the Participant.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_minimum_required_equity_annual_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_minimum_required_equity_cumulative_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_premium_factor": {
+      "description": "The factor with regards to the `premium_base` that is paid by the Participant.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_resistance_reserve_annual_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_resistance_reserve_cumulative_premium": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_waiver_annual_premium": {
+      "description": "",
+      "type": "number"
+    },
+    "participant_waiver_cumulative_premium": {
+      "description": "The cumulative waived participant premium.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_waiver_premium_factor": {
+      "description": "The factor with regards to the `premium_base` that is paid by the Participant.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participation_factor": {
+      "description": ".",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participation_years": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "paying_amount": {
+      "description": "The annual amount that is currently disbursed from this Coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "payment_month": {
+      "description": "",
+      "enum": [
+        "1_JANUARY",
+        "1_FEBRUARY",
+        "1_MARCH",
+        "1_APRIL",
+        "1_MAY",
+        "1_JUNE",
+        "1_JULY",
+        "1_AUGUST",
+        "1_SEPTEMBER",
+        "1_OCTOBER",
+        "1_NOVEMBER",
+        "1_DECEMBER"
+      ],
+      "type": "string"
+    },
+    "payment_reduction_factor": {
+      "description": "The factor that will cut the disbursement for this Coverage.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_accrual_factor": {
+      "description": "The factor in which pension is built up.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_age": {
+      "description": "The age of the beneficiary at the Coverage's `disbursement_starts_at`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_age_beneficiary": {
+      "description": "The age of the beneficiary at which the disbursement of the Coverage is expected to start.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_amount": {
+      "description": "The pension amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_base": {
+      "description": "The amount on which the calculated Coverage is based.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_calculation_system": {
+      "description": "",
+      "type": "string"
+    },
+    "pension_date": {
+      "description": "The date at which the `state` of the Coverage is expected to become `COMMENCED`.",
+      "format": "date",
+      "type": "string"
+    },
+    "pension_date_beneficiary": {
+      "description": "The date at which the disbursement of the Coverage is expected to start for the beneficiary.",
+      "format": "date",
+      "type": "string"
+    },
+    "pension_fund_name": {
+      "description": "",
+      "type": "string"
+    },
+    "pension_salary": {
+      "description": "The annual pension salary used for calculating this Coverage.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "policy_id": {
+      "description": "The Policy Id of the Policy to which this coverage belongs.",
+      "type": "string"
+    },
+    "premium_base": {
+      "description": "The amount that is the bases for the Premium calculation.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "premium_discount_amount": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "premium_reduction_factor": {
+      "description": "The reduction on the calculated premium.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "product_component_name": {
+      "description": "The name of the Product Component on which this Coverage is based.",
+      "maxLength": 50,
+      "type": "string"
+    },
+    "projected_amount": {
+      "description": "The attainable amount that would be accrued on the `accrual_end_age` with non-changing conditions.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "prospective_years": {
+      "description": "The number of years that the Coverage will be building up in the future.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "rated_accrued_years": {
+      "description": "The number of years that this Coverage has been accruing, rated according to the `years_accrual_factor` of this Coverage's Policy.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "rated_attainable_years": {
+      "description": "The rated (according on the `years_accrual_factor`) total number of years that the Coverage will be building up, up to the `accrual_end_age`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "rated_extra_years": {
+      "description": "Additional `rated_accrued_years`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "redemption_amount": {
+      "description": "The redemption amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "reduction_amount": {
+      "description": "The reduction amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "remain_capital_code": {
+      "description": "",
+      "type": "boolean"
+    },
+    "risk_end_date": {
+      "description": "",
+      "format": "date",
+      "type": "string"
+    },
+    "risk_profile": {
+      "description": "Risk profile",
+      "type": "string"
+    },
+    "smoothing_capital": {
+      "description": "Amount of the coverage that is considered as smoothing capital.",
+      "format": "double",
+      "type": "number"
+    },
+    "state": {
+      "$ref": "../../coverage-state/1.0.0/coverage-state.schema.json"
+    },
+    "unconditional_indexation_code": {
+      "description": "",
+      "type": "string"
+    },
+    "urm_premium_table_code": {
+      "description": "",
+      "type": "string"
+    },
+    "voluntary_premium_factor": {
+      "description": "",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "waiver_annual_premium": {
+      "description": "The annual premium based on the `waiver_premium_factor`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "waiver_cumulative_premium": {
+      "description": "The amount of paid waiver premium.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "waiver_premium_factor": {
+      "description": "The factor for a premium that is paid for insurance of premium waiver of this Coverage.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

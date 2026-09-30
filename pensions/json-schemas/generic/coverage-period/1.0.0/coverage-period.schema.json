@@ -1,0 +1,103 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-period/1.0.0/coverage-period.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A period in which a Coverage is built up.",
+  "properties": {
+    "accrued_amount": {
+      "description": "The total amount of accrued premiums in this Coverage Period.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "capital_destination": {
+      "$ref": "../../capital-destination/1.0.0/capital-destination.schema.json"
+    },
+    "current_interest": {
+      "description": "The current interest for this Coverage Period.",
+      "type": "number"
+    },
+    "ends_at": {
+      "description": "The date on which this Coverage Period ends (and a new Coverage Period can start). This field is empty or omitted for the active Coverage Period.",
+      "format": "date",
+      "type": "string"
+    },
+    "external_account_number": {
+      "description": "This can be filled in with the account ID of an external custodian as a link to a unique period.",
+      "type": "string"
+    },
+    "extra_savings_amount": {
+      "description": "The fixed chosen amount to save each month. Either this field contains a value, or ExtraSavingsFactor. 0.00 means chosen for 0.00 or for a factor. null means that no value has been set, or that for the next period nothing has been chosen.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "extra_savings_factor": {
+      "description": "The factor of the ExtraSavingsCapacity to save each month. Either this field contains a value, or ExtraSavingsAmount. Both fields can be 0. 0.00 means that for either an amount was chosen, or that was chosen to not participate. null means that no value has been set, or that for the next period nothing has been chosen.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "extra_savings_range": {
+      "description": "The still available capacity for extra savings.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "is_reconcilable": {
+      "description": "Indicates whether this Coverage Period is reconcilable (_verevenbaar_ in Dutch).",
+      "type": "boolean"
+    },
+    "is_reconciled": {
+      "description": "Indicates whether this Coverage Period is reconciled (_verevend_ in Dutch).",
+      "type": "boolean"
+    },
+    "is_splittable": {
+      "description": "Indicates whether this Coverage Period is splittable (_verbijzonderbaar_ in Dutch).",
+      "type": "boolean"
+    },
+    "is_splitted": {
+      "description": "Indicates whether this Coverage Period is splitted (_verbijzonderd_ in Dutch).",
+      "type": "boolean"
+    },
+    "liability_capital": {
+      "description": "Amount of the coverage period that is considered as liability capital.",
+      "format": "double",
+      "type": "number"
+    },
+    "period_id": {
+      "description": "The internal identifier of this Coverage period.",
+      "type": "string"
+    },
+    "rated_accrued_years": {
+      "description": "The number of years that this Coverage has been accruing, rated according to the `years_accrual_factor` of this Coverage's Policy. Specified per for this coverage period.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "reconcilable_partner_person_id": {
+      "description": "The Person Id of the partner with whom reconciliation is possible.",
+      "format": "uuid",
+      "type": "string"
+    },
+    "smoothing_capital": {
+      "description": "Amount of the coverage period that is considered as smoothing capital.",
+      "format": "double",
+      "type": "number"
+    },
+    "splittable_partner_person_id": {
+      "description": "The Person Id of the partner with whom the Coverage Period can be split.",
+      "format": "uuid",
+      "type": "string"
+    },
+    "starts_at": {
+      "description": "The date on which this Coverage Period starts.",
+      "format": "date",
+      "type": "string"
+    },
+    "state": {
+      "$ref": "../../coverage-period-state/1.0.0/coverage-period-state.schema.json"
+    }
+  },
+  "required": [
+    "period_id",
+    "state",
+    "starts_at"
+  ],
+  "type": "object"
+}

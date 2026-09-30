@@ -1,0 +1,12 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/beneficiary-type/1.0.0/beneficiary-type.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The type of beneficiary of a Coverage.",
+  "enum": [
+    "PARTICIPANT",
+    "INSURED",
+    "PARTNER",
+    "CHILD"
+  ],
+  "type": "string"
+}

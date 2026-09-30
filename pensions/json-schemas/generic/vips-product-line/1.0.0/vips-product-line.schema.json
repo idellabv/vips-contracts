@@ -1,0 +1,9 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/vips-product-line/1.0.0/vips-product-line.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A Product Line in VIPS. Note that this is an extensible enum.",
+  "type": "string",
+  "x-extensible-enum": [
+    "VIPS_PENSIONS"
+  ]
+}

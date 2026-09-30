@@ -1,0 +1,12 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/capital-destination/1.0.0/capital-destination.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Defines the purpose or allocation of Capital.",
+  "type": "string",
+  "x-extensible-enum": [
+    "OP",
+    "OP_PLUS_PP",
+    "PP",
+    "ORPHAN"
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-v2/1.0.0/policy-v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A Policy within the Pension Administration.",
+  "properties": {
+    "accrual_end_date": {
+      "description": "The date at which accrual of this Coverage ends.",
+      "format": "date",
+      "type": "string"
+    },
+    "accrual_start_date": {
+      "description": "The date at which accrual of this Coverage starts.",
+      "format": "date",
+      "type": "string"
+    },
+    "active_policy_id": {
+      "description": "The `policy_id` of the Policy that is active with regards to this Policy.",
+      "type": "string"
+    },
+    "actuarial_analysis_regulation_id": {
+      "description": "Grouping id for this Policy from the annual work analysis.",
+      "minimum": 0.0,
+      "type": "integer"
+    },
+    "annual_salary": {
+      "description": "The current annual Salary of the Participant in this Employment.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "calculation_metadata": {
+      "$ref": "../../calculation-metadata/1.0.0/calculation-metadata.schema.json"
+    },
+    "conditional_indexation_active_code": {
+      "description": "",
+      "type": "string"
+    },
+    "conditional_indexation_inactive_code": {
+      "description": "",
+      "type": "string"
+    },
+    "conversion_dossier_id": {
+      "description": "",
+      "type": "string"
+    },
+    "cost_center": {
+      "description": "The cost center of this policy",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "The date and time when this Policy was created in the Pension Administration.",
+      "format": "date-time",
+      "readOnly": true,
+      "type": "string"
+    },
+    "current_pension_age": {
+      "description": "The age of the participant at the `pension_date`.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "custom_metadata": {
+      "$ref": "../../policy-custom-metadata/1.0.0/policy-custom-metadata.schema.json"
+    },
+    "deduction_disability_exemption_factor": {
+      "description": "The deduction on the disability exemption factor.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "disability_exemption_factor": {
+      "description": "The factor in which this Incapacitated Participant is eligible for premium waiver.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "disability_factor": {
+      "description": "The factor in which this Participant is incapacitated.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "disability_policy_id": {
+      "description": "The `policy_id` of the Policy that is the disability Policy with regards to this Policy.",
+      "type": "string"
+    },
+    "dossier": {
+      "$ref": "../../dossier/1.0.0/dossier.schema.json"
+    },
+    "effective_from": {
+      "description": "The date from which this Policy is in effect. (Aka the start date of the Policy).",
+      "format": "date",
+      "type": "string"
+    },
+    "effective_until": {
+      "description": "The Date up to which (and not including) this Policy is in effect. (Aka the end date of the Policy).",
+      "format": "date",
+      "type": "string"
+    },
+    "employer": {
+      "description": "Information about the Employer whose Employment of the Main Insured led to the creation of this Policy.",
+      "properties": {
+        "employer_id": {
+          "description": "The Id of the Employer whose Employment of the Main Insured led to the creation of this Policy.",
+          "type": "string"
+        },
+        "employer_name": {
+          "description": "The Name of the Employer whose Employment of the Main Insured led to the creation of this Policy.",
+          "type": "string"
+        },
+        "employment_ended_at": {
+          "description": "The Date at which Employment with this Employer ended.",
+          "format": "date",
+          "type": "string"
+        },
+        "employment_started_at": {
+          "description": "The Date at which Employment with this Employer started.",
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "first_sick_date": {
+      "description": "First date of sick leave.",
+      "format": "date",
+      "type": "string"
+    },
+    "gross_net": {
+      "description": "Is this a gross or a net policy.",
+      "enum": [
+        "GROSS",
+        "NET"
+      ],
+      "type": "string"
+    },
+    "inactive_since": {
+      "description": "",
+      "format": "date",
+      "type": "string"
+    },
+    "is_accrual_continued": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_participating_premium_waiver": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_participating_voluntary": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_reinsured": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_retired_from_active": {
+      "description": "",
+      "type": "boolean"
+    },
+    "is_voluntary_continued": {
+      "description": "",
+      "type": "boolean"
+    },
+    "leave_of_absence_continuation_factor": {
+      "description": "Leave of absence continuation factor.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "leave_of_absence_end_date": {
+      "description": "Leave of absence end date.",
+      "format": "date",
+      "type": "string"
+    },
+    "leave_of_absence_policy_id": {
+      "description": "The Id of the leave of absence policy.",
+      "type": "string"
+    },
+    "leave_of_absence_start_date": {
+      "description": "Leave of absence start date.",
+      "format": "date",
+      "type": "string"
+    },
+    "leave_of_absence_type": {
+      "description": "The type of the absent of leave.",
+      "enum": [
+        "LIFE_COURSE_LEAVE",
+        "LEAVE_AFTER_FIRST_18_MONTHS",
+        "LEAVE_FIRST_18_MONTHS",
+        "MATERNITY_LEAVE",
+        "PARENTAL_LEAVE",
+        "SABBATICAL"
+      ],
+      "type": "string"
+    },
+    "life_cycle": {
+      "description": "",
+      "type": "string"
+    },
+    "migration_average_parttime_factor": {
+      "description": "The average parttime factor at migration.",
+      "maximum": 2.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "onboarding_disability_factor": {
+      "description": "The onboarding disability factor.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "participant_years": {
+      "description": "",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "parttime_factor": {
+      "description": "The factor with regards to the full-time working time for this Employment.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "parttime_factor_before_end_employment": {
+      "description": "The parttime factor just before the end of the employment, fulltime is represented as 1. This property is filled in mutation 2 and is emptied by mutation 41.",
+      "maximum": 2.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_date": {
+      "description": "The date at which the Participant is expected to retire.",
+      "format": "date",
+      "type": "string"
+    },
+    "pension_date_chosen": {
+      "description": "The date at which the Participant has chosen to retire.",
+      "format": "date",
+      "type": "string"
+    },
+    "pension_factor": {
+      "description": "The factor in which this Participant is retired. 1 = 100%.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "pension_policy_id": {
+      "description": "The `policy_id` of the Policy that has been split off to host current benefits that are being disbursed.",
+      "type": "string"
+    },
+    "policy_id": {
+      "description": "A logical and unique policy identifier for this policy in the Pension Administration.",
+      "examples": [
+        "0012345678-1"
+      ],
+      "readOnly": true,
+      "type": "string"
+    },
+    "policy_id_previous_administrator": {
+      "description": "The id of the Policy at the previous administrator.",
+      "type": "string"
+    },
+    "policy_state": {
+      "$ref": "../../policy-state/1.0.0/policy-state.schema.json"
+    },
+    "pre_conversion_dossier_id": {
+      "description": "The 'dossier_id' where this policy was converted from.",
+      "type": "string"
+    },
+    "pre_conversion_participant_id": {
+      "description": "The 'participant_id' where this policy was converted from.",
+      "type": "string"
+    },
+    "premium_discount_amount": {
+      "description": "The premium discount amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "rated_participant_years": {
+      "description": "The redemption amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "redemption_amount": {
+      "description": "The redemption amount.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "retired_policy_id": {
+      "description": "",
+      "type": "string"
+    },
+    "salary": {
+      "description": "The current Salary of the Participant in this Employment.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "scheme": {
+      "description": "The Scheme on which this Policy is based.",
+      "properties": {
+        "contract_id": {
+          "description": "The Id of the Contract in which this Scheme is defined.",
+          "type": "string"
+        },
+        "product_name": {
+          "description": "The Name of the Product on which this Scheme is based.",
+          "type": "string"
+        },
+        "scheme_id": {
+          "description": "The Unique Id for this Scheme.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "source_policy_id": {
+      "description": "",
+      "type": "string"
+    },
+    "tax_bracket_four_factor_code": {
+      "description": "",
+      "type": "string"
+    },
+    "unconditional_indexation_active_code": {
+      "description": "",
+      "type": "string"
+    },
+    "unconditional_indexation_inactive_code": {
+      "description": "",
+      "type": "string"
+    },
+    "updated_at": {
+      "description": "The date and time when this Policy was last updated in the Pension Administration.",
+      "format": "date-time",
+      "readOnly": true,
+      "type": "string"
+    },
+    "voluntary_continuation_end_date": {
+      "description": "",
+      "format": "date",
+      "type": "string"
+    },
+    "voluntary_premium_factor": {
+      "description": "",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "yearly_factor_a": {
+      "description": "",
+      "items": {
+        "description": "Factor A per year.",
+        "properties": {
+          "amount": {
+            "description": "The factor A.",
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "period_year": {
+            "description": "The year the factor A belongs to.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "amount",
+          "period_year"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "years_accrual_factor": {
+      "description": "The building-up factor for this Policy.",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "type": "number"
+    }
+  },
+  "required": [
+    "policy_id"
+  ],
+  "type": "object"
+}

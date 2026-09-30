@@ -1,0 +1,12 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-custom-metadata/1.0.0/policy-custom-metadata.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A collection of key-value pairs with Strings as values, which can be used to store additional custom information about this Policy. The contents of this object can be manupulated directly through the API and is not affected by Dossier Calculations.",
+  "examples": [
+    {
+      "personel_number": "12345",
+      "some_other_property": "and its value"
+    }
+  ],
+  "type": "object"
+}

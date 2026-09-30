@@ -1,0 +1,114 @@
+{
+  "base_uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/",
+  "schema": "vips.apim-schema-published-index/1",
+  "schemas": [
+    {
+      "name": "BenefitPlan",
+      "path": "pensions/json-schemas/generic/benefit-plan/1.0.0/benefit-plan.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/benefit-plan/1.0.0/benefit-plan.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "CalculationMetadata",
+      "path": "pensions/json-schemas/generic/calculation-metadata/1.0.0/calculation-metadata.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/calculation-metadata/1.0.0/calculation-metadata.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "CoveragePeriod",
+      "path": "pensions/json-schemas/generic/coverage-period/1.0.0/coverage-period.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-period/1.0.0/coverage-period.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "CoverageV2",
+      "path": "pensions/json-schemas/generic/coverage-v2/1.0.0/coverage-v2.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-v2/1.0.0/coverage-v2.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "DefinitionMetadata",
+      "path": "pensions/json-schemas/generic/definition-metadata/1.0.0/definition-metadata.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/definition-metadata/1.0.0/definition-metadata.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Dossier",
+      "path": "pensions/json-schemas/generic/dossier/1.0.0/dossier.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/dossier/1.0.0/dossier.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "MainInsuredPerson",
+      "path": "pensions/json-schemas/generic/main-insured-person/1.0.0/main-insured-person.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/main-insured-person/1.0.0/main-insured-person.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "PolicyCustomMetadata",
+      "path": "pensions/json-schemas/generic/policy-custom-metadata/1.0.0/policy-custom-metadata.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-custom-metadata/1.0.0/policy-custom-metadata.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "PolicyDetailedV2",
+      "path": "pensions/json-schemas/generic/policy-detailed-v2/1.0.0/policy-detailed-v2.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-detailed-v2/1.0.0/policy-detailed-v2.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "PolicyV2",
+      "path": "pensions/json-schemas/generic/policy-v2/1.0.0/policy-v2.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-v2/1.0.0/policy-v2.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Task",
+      "path": "pensions/json-schemas/taskmgmt/task/1.1.0/task.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/taskmgmt/task/1.1.0/task.schema.json",
+      "version": "1.1.0"
+    },
+    {
+      "name": "beneficiaryType",
+      "path": "pensions/json-schemas/generic/beneficiary-type/1.0.0/beneficiary-type.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/beneficiary-type/1.0.0/beneficiary-type.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "capitalDestination",
+      "path": "pensions/json-schemas/generic/capital-destination/1.0.0/capital-destination.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/capital-destination/1.0.0/capital-destination.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "coveragePeriodState",
+      "path": "pensions/json-schemas/generic/coverage-period-state/1.0.0/coverage-period-state.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-period-state/1.0.0/coverage-period-state.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "coverageState",
+      "path": "pensions/json-schemas/generic/coverage-state/1.0.0/coverage-state.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-state/1.0.0/coverage-state.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "coverageTypeV2",
+      "path": "pensions/json-schemas/generic/coverage-type-v2/1.0.0/coverage-type-v2.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/coverage-type-v2/1.0.0/coverage-type-v2.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "policyState",
+      "path": "pensions/json-schemas/generic/policy-state/1.0.0/policy-state.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-state/1.0.0/policy-state.schema.json",
+      "version": "1.0.0"
+    },
+    {
+      "name": "vips_product_line",
+      "path": "pensions/json-schemas/generic/vips-product-line/1.0.0/vips-product-line.schema.json",
+      "uri": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/vips-product-line/1.0.0/vips-product-line.schema.json",
+      "version": "1.0.0"
+    }
+  ]
+}
