@@ -1,0 +1,32 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-detailed-v2/1.0.0/policy-detailed-v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "description": "A detailed view of a Policy, including the underlying Coverages."
+    },
+    {
+      "$ref": "../../policy-v2/1.0.0/policy-v2.schema.json"
+    },
+    {
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coverages": {
+          "description": "The Coverages inside this Policy.",
+          "items": {
+            "$ref": "../../coverage-v2/1.0.0/coverage-v2.schema.json"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      }
+    },
+    {
+      "required": [
+        "coverages"
+      ]
+    }
+  ]
+}

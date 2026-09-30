@@ -1,0 +1,38 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/calculation-metadata/1.0.0/calculation-metadata.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Metadata about the calculation of a Dossier, Policy and/or Coverage.",
+  "properties": {
+    "based_on_mutations_of": {
+      "description": "This property can be earlier than `recorded_on` to calculate the Dossier with the mutations known up to and including this point in time. By allowing a different `based_on_mutations_of` date-time, the Pension Administration is able to accurately reproduce earlier calculation positions.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "calculation_id": {
+      "description": "The Id of the calculation of which this Dossier, Policy and/or Coverage is the result.",
+      "type": "string"
+    },
+    "comparison_calculation_date_time": {
+      "description": "This property can differ from `based_on_mutations_of` to include an intermediate position based on the mutations that are known up to and including this point in time, without actually including those mutations. This can be used to compare two calculated positions.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "projected_calculation_date_time": {
+      "description": "This property can the same as, earlier than or later than `recorded_on`, to calculate the Dossier towards a different point in time than _now_. By allowing a different date-time, the Pension Administration is able to accurately calculate as they were at an earlier moment in time or as they are projected to be in a future moment in time, based on the mutations known at `based_on_mutations_of`.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "recorded_on": {
+      "description": "The date and time at which this calculation was recorded.",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "calculation_id",
+    "recorded_on",
+    "based_on_mutations_of",
+    "projected_calculation_date_time"
+  ],
+  "type": "object"
+}

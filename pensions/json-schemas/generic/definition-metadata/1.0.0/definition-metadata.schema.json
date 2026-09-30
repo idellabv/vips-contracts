@@ -1,0 +1,38 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/definition-metadata/1.0.0/definition-metadata.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Contains metadata about the Definition",
+  "properties": {
+    "effective_from": {
+      "description": "The date and time from which this Definition is in effect",
+      "format": "date-time",
+      "readOnly": true,
+      "type": "string"
+    },
+    "effective_until": {
+      "description": "The date and time up to which this Definition is in effect. This remains empty for the latest Definition.",
+      "format": "date-time",
+      "readOnly": true,
+      "type": "string"
+    },
+    "revision": {
+      "description": "The revision number of the Definition. This gets increased with each revision to this definition",
+      "format": "int32",
+      "readOnly": true,
+      "type": "integer"
+    },
+    "version": {
+      "description": "The Semantic Version of this Definition (see https://semver.org).",
+      "examples": [
+        "1.4.2"
+      ],
+      "readOnly": true,
+      "type": "string"
+    }
+  },
+  "readOnly": true,
+  "required": [
+    "effective_from"
+  ],
+  "type": "object"
+}

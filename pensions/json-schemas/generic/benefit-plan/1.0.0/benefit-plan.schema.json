@@ -1,0 +1,51 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/benefit-plan/1.0.0/benefit-plan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A benefit plan which describes the payments for a given period. Multiple plans can be available on a coverage. For example if indexation takes place each year, you will get a seperate plan for each year.",
+  "properties": {
+    "amount": {
+      "description": "The amount to be disbursed. In case of a one time payment, it is the full amount to be disbursed. In the other cases it is the yearly amount.",
+      "type": "number"
+    },
+    "benefit_plan_id": {
+      "description": "Id of the benefit_plan.",
+      "type": "string"
+    },
+    "disbursement_frequency": {
+      "description": "The frequency of the payment",
+      "type": "string",
+      "x-extensible-enum": [
+        "ONE_TIME",
+        "MONTHLY",
+        "YEARLY"
+      ]
+    },
+    "ends_after": {
+      "description": "The end date of the payment. In case the date lies a day BEFORE the start date, this line is annulled. In case of an one time payment, the date is the same as the start date. In case of a temporary payment period, this date is the date is the last date of the payment period. In case an amount changes on a later date, the date can stay as it was.",
+      "format": "date",
+      "type": "string"
+    },
+    "reason": {
+      "description": "The reason for the benefit plan",
+      "type": "string",
+      "x-extensible-enum": [
+        "REGULAR",
+        "SURRENDER_VALUE",
+        "TERMINAL_PAYMENT"
+      ]
+    },
+    "starts_on": {
+      "description": "Date of the start of the payment period.",
+      "format": "date",
+      "type": "string"
+    }
+  },
+  "required": [
+    "amount",
+    "benefit_plan_id",
+    "disbursement_frequency",
+    "reason",
+    "starts_on"
+  ],
+  "type": "object"
+}

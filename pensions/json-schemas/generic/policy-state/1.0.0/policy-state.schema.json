@@ -1,0 +1,21 @@
+{
+  "$id": "https://raw.githubusercontent.com/idellabv/vips-contracts/main/pensions/json-schemas/generic/policy-state/1.0.0/policy-state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "State of a Policy. VOLUNTARY_CONTINUED is deprecated as of ProductEngine 3.97.0 and is retained only for policies recorded before the split into VOLUNTARILY_CONTINUED_FULL and VOLUNTARILY_CONTINUED_LIMITED.",
+  "enum": [
+    "ACTIVE",
+    "ASPIRING",
+    "DISABLED",
+    "ASPIRING_DISABLED",
+    "LEAVE_OF_ABSENCE",
+    "NON_CONTRIBUTING",
+    "DECEASED",
+    "RETIRED",
+    "BOUGHT_OFF",
+    "CLOSED",
+    "VOLUNTARY_CONTINUED",
+    "VOLUNTARILY_CONTINUED_FULL",
+    "VOLUNTARILY_CONTINUED_LIMITED"
+  ],
+  "type": "string"
+}
