@@ -1,7 +1,8 @@
 # This is a CODEOWNERS file.
 # See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners for more information.
 
-# Everything else in the repository needs to be reviewed by the Architects team
-* @idellabv/Architects
+# Everything else in the repository needs to be reviewed by the architecturetechnology team
+* @idellabv/architecturetechnology
 
-/.github/ @idellabv/VIPS-DevOps
+# DevOps-owned paths need to be reviewed by the vips-contracts-admin team
+/.github/ @idellabv/vips-contracts-admin
